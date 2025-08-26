@@ -75,18 +75,6 @@ For a measurable space $(X, \Sigma)$, a function $\mu: \Sigma \to [0, \infty]$ i
 
 ---
 
-###  The Measurable Space and Integration
-
-The **measure space** is the triplet $(X, \Sigma, \mu)$. It's the complete framework for defining and calculating integrals.
-
-* $X$: The underlying set (e.g., $\mathbb{R}$, a sample space).
-* $\Sigma$: The $\sigma$-algebra of measurable sets.
-* $\mu$: The measure that assigns "size" to the sets in $\Sigma$.
-
-The **Lebesgue integral** is defined over a measure space and provides a more general and robust form of integration than the Riemann integral. It's defined by "measuring" the size of the set where the function's value falls within a certain range. This makes it more suitable for a wider class of functions and for concepts like probability expectation.
-
----
-
 ### Probability Space
 
 **Probability Measure** ($P$): A probability measure is a measure where the total measure of the entire set is 1.
@@ -141,7 +129,17 @@ When a random person walks through a door:
 
 ### Random variables
 
-Let $(\Omega, \mathcal{F}, P)$ be a probability space. A function $X: \Omega \to \mathbb{R}$ is a random variable if it satisfies a technical condition called **measurability**. This condition ensures that for any interval $(a, b)$ on the real number line, the set of outcomes in $\Omega$ that map to this interval is an event in $\mathcal{F}$.
+Let $(\Omega, \mathcal{F}, P)$ be a probability space. A function $X: \Omega \to \mathbb{R}$ is a random variable if, for any open interval $(a, b) \subseteq \mathbb{R}$, the preimage $X^{-1}((a, b)) is an event in $\mathcal{F}$.
+
+$$ \Omega \xrightarrow{X} \mathbb{R} $$
+
+$$ \mathcal{F} \xleftarrow{X^{-1}} \mathcal{B}(\mathbb{R}) $$
+
+So you can measure the probability of the random variable falling within any interval $(a, b)$.
+
+---
+
+### Discrete and continuous random variables
 
 * **Discrete Random Variable**: A random variable with a finite or countably infinite number of possible values.
     * **Example**: The number of heads in two coin flips. The possible values are 0, 1, or 2.
@@ -150,16 +148,115 @@ Let $(\Omega, \mathcal{F}, P)$ be a probability space. A function $X: \Omega \to
 
 ---
 
-### Random Variables 
+### Independence
 
-Consider the probability space $(\Omega, \mathcal{F}, P)$.
+Two events $A$ and $B$ in a probability space $(\Omega, \mathcal{F}, P)$ are said to be **independent** if the occurrence of one event does not affect the probability of the occurrence of the other event. Formally, $A$ and $B$ are independent if:
 
-A random variable $X$ is a function $X$ such that:
+$$ P(A \cap B) = P(A) \cdot P(B) $$
 
-$$ \Omega \xrightarrow{X} \mathbb{R} $$
+This means that the probability of both events happening together is equal to the product of their individual probabilities.
 
-$$ \mathcal{F} \xleftarrow{X^{-1}} \mathcal{B}(\mathbb{R}) $$
+> **Independence means multiply!**
 
 ---
 
+### Independence of Random Variables
 
+Two random variables $X$ and $Y$ defined on the same probability space $(\Omega, \mathcal{F}, P)$ are said to be **independent** if for every pair of Borel sets $A, B \in \mathcal{B}(\mathbb{R})$, the events $\{X \in A\}$ and $\{Y \in B\}$ are independent. Formally, $X$ and $Y$ are independent if:
+
+$$ P(X \in A, Y \in B) = P(X \in A) \cdot P(Y \in B) $$
+
+---
+
+### Expectation
+
+The **expectation** (or expected value) of a random variable $X$, denoted by $E[X]$, is the "average" value of $X$:
+
+$$E[X] = \int_{\Omega} X(\omega) dP(\omega) $$
+
+For a discrete random variable $X$ with values $a_1, a_2, \ldots$ and probabilities $p_1, p_2, \ldots$, the expectation is:
+
+$$ E[X] = \sum_{i} a_i \cdot P(X = a_i) = \sum_{i} a_i p_i $$
+
+---
+
+### Linearity of Expectation
+
+The expectation operator is linear, meaning that for any random variables $X$ and $Y$, and any constants $a$ and $b$, the following holds:
+
+$$ E[aX + bY] = aE[X] + bE[Y]$$
+
+---
+
+### Expectation of product of independent random variables
+
+If $X$ and $Y$ are independent random variables, then the expectation of their product is the product of their expectations:
+
+$$ E[XY] = E[X] \cdot E[Y] $$
+---
+
+### Variance and Covariance
+
+$$Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2$$
+
+$$Cov(X, Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]$$
+
+### Standard deviation
+
+$$\sigma(X) = \sqrt{Var(X)}$$
+
+---
+
+### Variance and independence
+
+If $X$ and $Y$ are independent:
+
+$$Cov(X, Y) = 0$$
+
+$$Var(X + Y) = Var(X) + Var(Y)$$
+
+---
+
+### Standard deviation of repeated experiments
+
+Imagine you repeat $N$ times an experiment, with outcome $X_i$, $1 \leq i \leq N$.  You compute the average outcome: 
+
+$$E[X] = \frac{1}{N} \sum_{i=1}^N X_i$$
+
+The variance of the average is:
+
+$$Var(E[X]) = Var\left(\frac{1}{N} \sum_{i=1}^N X_i\right) = \frac{1}{N^2} \sum_{i=1}^N Var(X_i) = \frac{1}{N} Var(X)$$
+
+And the standard deviation is: 
+
+$$\sigma(E[X]) = \frac{1}{\sqrt{N}} \sigma(X)$$
+
+So the precision improves with the square root of the number of experiments.
+
+---
+
+### Sample Variance vs. Population Variance
+
+When computing the variance as: 
+
+$$Var(X) = E[(X - E[X])^2] = \min_{\mu} E[(X - \mu)^2]$$
+
+we are computing the **population variance**.
+This in a way underestimates the variance, because it assumes the mean $E[X]$ is known exactly.
+
+But normally we don't know $E[X]$ exactly, we only have a sample of $N$ values $X_i$, $1 \leq i \leq N$.
+
+---
+
+### Population and Sample Variance
+
+The **population variance** is computed as:
+
+$$Var(X) = E[(X - E[X])^2] = \frac{1}{N} \sum_{i=1}^N (X_i - E[X])^2$$
+
+
+The **sample variance** is computed as:
+
+$$S^2 = \frac{1}{N-1} \sum_{i=1}^N (X_i - E[X])^2$$
+
+---
