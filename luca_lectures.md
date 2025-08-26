@@ -17,6 +17,16 @@
     * Bayes' theorem
         * Example (rust)
 
+1. Expectation and variance
+    * Covariance and correlation
+    * Joint, marginal, and conditional distributions
+    * Independence and dependence
+    * Probability density functions (PDFs)
+    * Cumulative distribution functions (CDFs)
+    * Distribution of sums
+        * Central Limit Theorem
+        * Law of Large Numbers
+
 1. Distributions
     * Uniform distribution
     * Normal distribution
@@ -27,16 +37,6 @@
     * Dual of distributions
     * Bernoulli and binomial distributions in crowdsourcing
 
-1. Expectation and variance
-    * Covariance and correlation
-    * Joint, marginal, and conditional distributions
-    * Independence and dependence
-    * Probability density functions (PDFs)
-    * Cumulative distribution functions (CDFs)
-    * Distribution of sums
-        * Central Limit Theorem
-        * Law of Large Numbers
-    
 1. Hypothesis testing
     * Null hypothesis
     * Alternative hypothesis

@@ -1,3 +1,6 @@
+---
+marp: true
+---
 
 ###  Introduction to Measure Theory and Probability Theory
 
@@ -260,3 +263,40 @@ The **sample variance** is computed as:
 $$S^2 = \frac{1}{N-1} \sum_{i=1}^N (X_i - E[X])^2$$
 
 ---
+
+### Probability Distribution Function (PDF)
+
+A **probability distribution function** (PDF) describes how the values of a random variable are distributed. It provides the probabilities of different outcomes for both discrete and continuous random variables.
+
+* For a **discrete random variable**, the PDF is often called the **probability mass function** (PMF). It assigns a probability to each possible value of the random variable.
+    * Example: For a fair six-sided die, the PMF is:
+      $$ P(X = k) = \frac{1}{6} \quad \text{for } k = 1, 2, 3, 4, 5, 6 $$
+
+* For a **continuous random variable**:
+
+$$ P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx $$
+
+---
+
+### Properties of a PDF
+
+A valid probability distribution function (PDF) must satisfy the following properties:
+
+1.  **Non-negativity**: $f(x) \geq 0$ for all $x$ in the domain of $X$.
+2.  **Normalization**: The total area under the PDF curve must equal 1:
+    $$ \int_{-\infty}^{\infty} f(x) \, dx = 1 $$
+
+---
+
+### Cumulative Distribution Function (CDF)
+
+The **cumulative distribution function** (CDF) of a random variable $X$, denoted by $F(x)$, gives the probability that $X$ will take a value less than or equal to $x$. It is defined as:
+
+$$ F(x) = P(X \leq x) $$
+
+For a continuous random variable, the CDF is related to the PDF by:
+
+$$ F(x) = \int_{-\infty}^{x} f(t) \, dt $$
+
+---
+
