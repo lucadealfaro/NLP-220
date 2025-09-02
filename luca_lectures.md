@@ -12,20 +12,17 @@
     * Events and compound events
     * Independent and uncorrelated events
     * Random variables
-    * Probability distributions
+    * Independence
+
+1. Expectation and variance, conditional probability.
+    * Expectation and variance
     * Conditional probability
     * Bayes' theorem
         * Example (rust)
-
-1. Expectation and variance
     * Covariance and correlation
-    * Joint, marginal, and conditional distributions
     * Independence and dependence
     * Probability density functions (PDFs)
     * Cumulative distribution functions (CDFs)
-    * Distribution of sums
-        * Central Limit Theorem
-        * Law of Large Numbers
 
 1. Distributions
     * Uniform distribution
@@ -36,6 +33,10 @@
     * Bernoulli distribution
     * Dual of distributions
     * Bernoulli and binomial distributions in crowdsourcing
+    * Some theorems:
+        * Distribution of sums
+        * Central Limit Theorem
+        * Law of Large Numbers
 
 1. Hypothesis testing
     * Null hypothesis
