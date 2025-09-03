@@ -288,5 +288,13 @@ So you can say that the sentence is true with probability 0.75, with a standard 
 
 ---
 
+### Gaussian distribution
 
+The **Gaussian distribution** (or normal distribution) is a continuous probability distribution characterized by its bell-shaped curve. It is defined by two parameters: 
+* $\mu$: the mean
+* $\sigma$: the standard deviation
+
+The probability density function (PDF) of a Gaussian distribution is given by:
+
+$$p(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 

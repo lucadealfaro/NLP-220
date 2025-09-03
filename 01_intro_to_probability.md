@@ -218,6 +218,48 @@ $$Cov(X, Y) = 0$$
 
 $$Var(X + Y) = Var(X) + Var(Y)$$
 
+**Very important.  Remember this.**
+
+---
+
+Proof: 
+$$Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2$$
+
+So:
+$$Var(X + Y) = E[(X + Y)^2] - (E[X + Y])^2$$
+
+One piece at a time: 
+$$E[(X + Y)^2] = E[X^2 + 2XY + Y^2] = E[X^2] + 2E[XY] + E[Y^2]$$
+$$(E[X + Y])^2 = (E[X] + E[Y])^2 = (E[X])^2 + 2E[X]E[Y] + (E[Y])^2$$
+
+But $E[XY] = E[X]E[Y]$ if $X$ and $Y$ are independent, and so: 
+
+$$E[(X + Y)^2] - (E[X + Y])^2 = E[X^2] + E[Y^2] - (E[X])^2 - (E[Y])^2$$
+$$= Var(X) + Var(Y)$$
+
+---
+### Slide 4: Putting it All Together
+Now, let's substitute the expanded terms back into the variance equation:
+$Var(X + Y) = (E[X^2] + 2E[XY] + E[Y^2]) - ((E[X])^2 + 2E[X]E[Y] + (E[Y])^2)$
+$Var(X + Y) = E[X^2] - (E[X])^2 + E[Y^2] - (E[Y])^2 + 2E[XY] - 2E[X]E[Y]$
+We can group the terms to recognize the individual variances:
+$Var(X + Y) = [E[X^2] - (E[X])^2] + [E[Y^2] - (E[Y])^2] + 2(E[XY] - E[X]E[Y])$
+$Var(X + Y) = Var(X) + Var(Y) + 2(E[XY] - E[X]E[Y])$
+
+---
+### Slide 5: The Role of Independence
+This is where the **independence** of $X$ and $Y$ becomes crucial.
+For **independent random variables**, the expected value of their product is the product of their expected values:
+$E[XY] = E[X]E[Y]$
+Let's substitute this into our previous equation:
+$Var(X + Y) = Var(X) + Var(Y) + 2(E[X]E[Y] - E[X]E[Y])$
+$Var(X + Y) = Var(X) + Var(Y) + 2(0)$
+$Var(X + Y) = Var(X) + Var(Y)$
+
+---
+### Slide 6: Conclusion
+We have successfully proven that the **variance of the sum of two independent random variables** is the **sum of their variances**. This property is incredibly useful in statistics and probability theory, especially in areas like the **Central Limit Theorem** and **statistical inference**. It simplifies the calculation of the spread of a combined random process when the individual components don't influence each other. 
+
 ---
 
 ### Standard deviation of repeated experiments

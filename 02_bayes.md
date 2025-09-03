@@ -2,16 +2,19 @@
 marp: true
 ---
 
+## Conditional Probability and Bayes' Theorem
+
+---
+
 ### Joint Probability
 
-* **Joint Probability** is the probability of two events happening at the same time. It is denoted as 
+**Joint Probability** is the probability of two events happening at the same time. It is denoted as 
 
-$$ P(A \cap B)$$ 
+$$P(A \cap B)$$ 
 
 or 
 
 $$P(A, B)$$
-
 
 If $A$ and $B$ are independent events, then $P(A \cap B) = P(A) \cdot P(B)$.
 
@@ -19,7 +22,7 @@ If $A$ and $B$ are independent events, then $P(A \cap B) = P(A) \cdot P(B)$.
 
 ### Conditional Probability 
 
-* **Conditional Probability** is the probability of an event occurring given that another event has already occurred:
+**Conditional Probability** is the probability of an event occurring given that another event has already occurred:
 
 $$ P(A|B) = \frac{P(A \cap B)}{P(B)} $$
 
@@ -123,4 +126,7 @@ $P(\neg D|T) \propto P(T|\neg D) \cdot P(\neg D) \approx 10^-2$.
 P(D|T) $\approx 9.9 \cdot 10^{-6}/(9.9 \cdot 10^{-6} + 10^{-2}) \approx 0.99 \cdot 10^{-3}$.
 
 (The "back-of-the-envelope" solution was $10^{-3}$.)
+
+
+
 
