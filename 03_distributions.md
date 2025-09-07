@@ -298,3 +298,41 @@ The probability density function (PDF) of a Gaussian distribution is given by:
 
 $$p(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 
+---
+
+### Gaussian distribution
+
+The Gaussian distribution importance is due to the **Central Limit Theorem**, which states that the sum of a large number of independent random variables, regardless of their individual distributions, will tend to follow a Gaussian distribution.
+
+Moreover, in a sense that can be made precise, the Gaussian distribution is the maximum entropy distribution for a given mean and variance.
+This means that, among all distributions with a specified mean and variance, the Gaussian distribution is the one that makes the fewest assumptions about the data beyond those constraints.
+
+---
+
+### Gaussian distribution: properties
+
+There is a further aspect that makes the Gaussian distribution special.  Consider a Gaussian distribution with mean 0: 
+
+$$p(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma^2}}$$
+
+Its Fourier transform is:
+
+$$\hat{p}(\omega) = e^{-\frac{\sigma^2 \omega^2}{2}}$$
+
+which is also a Gaussian distribution, with mean 0 and standard deviation $1/\sigma$.
+
+So if the Gaussian distribution is the maximal-entropy distribution in the space domain, it is also the maximal-entropy distribution in the frequency domain.  No other distribution has this property.
+
+---
+
+### An aside on Gaussian distributions and Darwin - Mendel evolution
+
+Darwin's theory of evolution by natural selection was inspired by the work of Gregor Mendel on genetics.  Mendel discovered that traits are inherited in discrete units (genes), and that the combination of these genes from parents leads to variation in offspring.
+
+Initially, a strong objection to Darwin's theory was that if traits were inherited in discrete units, how could the continuous variation observed in nature be explained?
+
+For example: why is human height distributed continuously, more or less in Gaussian fashion, rather than in discrete steps?
+
+The resolution to this paradox came with the understanding that many traits are influenced by multiple genes, each contributing a small effect. This is known as polygenic inheritance. When multiple genes contribute to a trait, the combined effect can produce a Gaussian distribution of phenotypes, due to the central limit theorem.
+
+

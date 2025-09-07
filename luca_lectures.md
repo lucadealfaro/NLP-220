@@ -33,21 +33,11 @@ F = Fundamental
     * Poisson distribution
     * Exponential distribution
     * Bernoulli distribution
-    * Dual of distributions
     * Bernoulli and binomial distributions in crowdsourcing
     * Some theorems:
         * Distribution of sums
         * Central Limit Theorem
         * Law of Large Numbers
-
-1. Information theory (F)
-    * Information
-    * Entropy
-    * Joint entropy
-    * Kulback-Leibler divergence
-    * Cross-entropy
-    * Mutual information
-    * Earth-mover's distance
 
 1. Hypothesis testing (F)
     * Null hypothesis
@@ -59,6 +49,15 @@ F = Fundamental
     * Welch's t-test
     * Chi-squared test
     * K-fold cross-validation (?)
+
+1. Information theory (F)
+    * Information
+    * Entropy
+    * Joint entropy
+    * Kulback-Leibler divergence
+    * Cross-entropy
+    * Mutual information
+    * Earth-mover's distance
 
 1. Data (sec)
     * Understanding data types
