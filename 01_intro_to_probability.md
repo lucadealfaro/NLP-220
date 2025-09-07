@@ -2,101 +2,38 @@
 marp: true
 ---
 
-###  Introduction to Measure Theory and Probability Theory
+## Introduction to Probability Theory
 
-Measure theory is a foundational branch of mathematics that generalizes the concepts of **length**, **area**, and **volume**. It provides a rigorous framework for integration and probability. In essence, it defines what can be "measured" within a given set.
-
-Key questions measure theory addresses:
-* How can we define the **"size"** of a set?
-* How do we extend this concept from simple intervals or geometric shapes to more complex, abstract sets?
-* How do we formalize probability and expectation?
-
----
-
-###  What is a Sigma-Algebra?
-
-A **sigma-algebra**, or $\sigma$-algebra, is a collection of subsets of a set $X$ that satisfy specific properties. It is denoted by $\Sigma$ (capital sigma). The pair $(X, \Sigma)$ is called a **measurable space**.
-
-The purpose of a sigma-algebra is to define the sets for which we can assign a **measure**. These are the "measurable sets."
-
-A collection of subsets $\Sigma$ of a set $X$ is a $\sigma$-algebra if it satisfies the following three conditions:
-1.  **The empty set is in $\Sigma$**: $\emptyset \in \Sigma$.
-2.  **It's closed under complementation**: If a set $A$ is in $\Sigma$, then its complement $A^c = X \setminus A$ is also in $\Sigma$.
-3.  **It's closed under countable unions**: If a sequence of sets $A_1, A_2, A_3, \ldots$ are all in $\Sigma$, then their union $\bigcup_{i=1}^{\infty} A_i$ is also in $\Sigma$.
-
-A direct consequence of these rules is that a $\sigma$-algebra is also closed under countable intersections.
-
-
-
----
-
-###  The Borel Sigma-Algebra
-
-The **Borel $\sigma$-algebra**, denoted by $\mathcal{B}$, is a crucial example. It's the **smallest $\sigma$-algebra** on the set of real numbers, $\mathbb{R}$, that contains all open intervals.
-
-* **Generator**: The open intervals $(a, b)$ where $a, b \in \mathbb{R}$ generate the Borel $\sigma$-algebra.
-* **Significance**: The Borel $\sigma$-algebra contains almost every set you'd encounter in analysis, including:
-    * Open sets
-    * Closed sets
-    * Countable unions and intersections of these sets
-* **Intuition**: The Borel $\sigma$-algebra is the collection of "well-behaved" subsets of $\mathbb{R}$ that we can hope to measure. 
-
----
-
-### On the Borel Sigma-Algebra 
-
-* Every individual point ${x}$ is a Borel set. This is because we can express a single point as the intersection of a decreasing sequence of open intervals:
-  $${x} = \bigcap_{n=1}^{\infty} \left(x - \frac{1}{n}, x + \frac{1}{n}\right)$$
-  Since each open interval is in the Borel $\sigma$-algebra, and $\sigma$-algebras are closed under countable intersections, the single point set ${x}$ is also in the Borel $\sigma$-algebra.
-
-* Every interval of the form $(-\infty, a]$ is a Borel set. This is because we can express it as the intersection of a decreasing sequence of open intervals (similar to the above). 
-
-In fact, we could have taken as basis for the Borel Sigma-Algebra the collection of all intervals of the form $(-\infty, a]$ for $a \in \mathbb{R}$.
-
----
-
-###  What is a Measure?
-
-A **measure** is a function $\mu$ that assigns a non-negative value (a "size" or "volume") to each set in a $\sigma$-algebra $\Sigma$.
-
-For a measurable space $(X, \Sigma)$, a function $\mu: \Sigma \to [0, \infty]$ is a measure if it satisfies the following conditions:
-1. $\mu(\emptyset) = 0$ (the measure of the empty set is zero).
-1.  **Non-negativity**: $\mu(A) \ge 0$ for all $A \in \Sigma$.
-2.  **Countable additivity**: For any countable collection of disjoint sets $A_1, A_2, A_3, \ldots$ in $\Sigma$, the measure of their union is the sum of their individual measures:
-    $$\mu\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)$$
-
----
-
-###  Key Examples of Measures
-
-1.  **Lebesgue Measure** ($m$): This is the standard measure on the real numbers. It generalizes length.
-    * For an interval $[a, b]$, its Lebesgue measure is $m([a,b]) = b-a$.
-    * It's the foundation for Lebesgue integration, which is more powerful than Riemann integration.
-1.  **Counting Measure**: This measure simply counts the number of elements in a set.
-    * For a finite set $A$, the counting measure $\mu(A)$ is the number of elements in $A$, denoted $|A|$.
-    * For an infinite set, the measure is $\infty$.
+### Luca de Alfaro, UC Santa Cruz
 
 ---
 
 ### Probability Space
 
-**Probability Measure** ($P$): A probability measure is a measure where the total measure of the entire set is 1.
-* For a sample space $\Omega$, the probability measure $P$ on the $\sigma$-algebra $\mathcal{F}$ satisfies $P(\Omega) = 1$.
-* This formalizes the axioms of probability theory.
-
-A probability space is a special case of a measure space where the measure is a probability measure: 
-
-$(\Omega, \mathcal{F}, P)$, where $\Omega$ is the sample space, $\mathcal{F}$ is the sigma-algebra of events, and $P$ is the probability measure.
-
----
-
-### Probability Space
-
-The foundation of modern probability theory is a **probability space**, which is a special type of measure space. It's a triplet $(\Omega, \mathcal{F}, P)$ that formalizes the concepts of an experiment, its possible outcomes, and their probabilities.
+The foundation of probability theory is a **probability space**: a triplet $(\Omega, \mathcal{F}, P)$, where: 
 
 * $\Omega$ (**Sample Space**): The set of all possible outcomes of a random experiment. For example, if you flip a coin, $\Omega = \{\text{Heads}, \text{Tails}\}$. If you roll a die, $\Omega = \{1, 2, 3, 4, 5, 6\}$.
-* $\mathcal{F}$ (**Sigma-Algebra of Events**): A collection of subsets of $\Omega$ that we can assign a probability to. This is the sigma-algebra we discussed previously. Each set in $\mathcal{F}$ is called an **event**.
+* $\mathcal{F}$ (**Sigma-Algebra of Events**): A collection of subsets of $\Omega$ that we can assign a probability to. Each set in $\mathcal{F}$ is called an **event**.
 * $P$ (**Probability Measure**): A measure defined on $\mathcal{F}$ that assigns a probability (a number between 0 and 1) to each event.
+
+---
+
+### Examples of Probability Spaces
+
+1. **Flipping a Coin**:
+   * $\Omega = \{\text{Heads}, \text{Tails}\}$
+   * $\mathcal{F} = \{\emptyset, \{\text{Heads}\}, \{\text{Tails}\}, \{\text{Heads}, \text{Tails}\}\}$
+   * $P(\{\text{Heads}\}) = 0.5$, $P(\{\text{Tails}\}) = 0.5$, $P(\emptyset) = 0$, $P(\{\text{Heads}, \text{Tails}\}) = 1$
+
+---
+
+### Examples of Probability Spaces
+
+2. **Rolling a Die**:
+   * $\Omega = \{1, 2, 3, 4, 5, 6\}$
+   * $\mathcal{F}$ includes all subsets of $\Omega$ (the power set of $\Omega$).
+   * $P(\{k\}) = \frac{1}{6}$ for each $k \in \{1, 2, 3, 4, 5, 6\}$.
+   * For $A \subseteq \Omega$, $P(A) = \frac{|A|}{6}$.
 
 ---
 
@@ -115,18 +52,14 @@ Thus, an event is a member of the sigma-algebra $\mathcal{F}$.
 
 ---
 
-### Example of events
+### Continuous Sample Spaces
 
-When rolling a single six-sided die:
-* Sample space $\Omega = \{1, 2, 3, 4, 5, 6\}$.
-* An event is "rolling a number greater than 4", which is the set $\{5, 6\}$.
-* The probability of this event is $P(\{5, 6\}) = P(\{5\}) + P(\{6\}) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}$.
+The sample space $\Omega$ can be more complex.  Of particular interest to us, $\Omega$ can be the set of real numbers $\mathbb{R}$, or the set of $n$-dimensional vectors $\mathbb{R}^n$.
 
-When a random person walks through a door:
-* Their height $X$ is a random variable that can take on any real positive value. 
-* An event can be "the person is taller than 180cm", which corresponds to the set of all outcomes where $X > 180$.
+In the case of $\Omega = \mathbb{R}$, the sigma-algebra $\mathcal{F}$ of measurable sets is the **Borel sigma-algebra** $\mathcal{B}(\mathbb{R})$, which includes: 
 
-(In the imperial system, heights are customarily measured in gallons per square foot). 
+* all open intervals, and 
+* all the sets that can be constructed from open intervals using countable unions, countable intersections, and complements.
 
 ---
 
@@ -138,7 +71,7 @@ $$ \Omega \xrightarrow{X} \mathbb{R} $$
 
 $$ \mathcal{F} \xleftarrow{X^{-1}} \mathcal{B}(\mathbb{R}) $$
 
-So you can measure the probability of the random variable falling within any interval $(a, b)$.
+**In practice this means:** $X$ is a random variable if you can measure the probability of the random variable falling within any interval $(a, b)$.
 
 ---
 
@@ -222,7 +155,7 @@ $$Var(X + Y) = Var(X) + Var(Y)$$
 
 ---
 
-Proof: 
+### Proof: (part 1) 
 $$Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2$$
 
 So:
@@ -238,8 +171,9 @@ $$E[(X + Y)^2] - (E[X + Y])^2 = E[X^2] + E[Y^2] - (E[X])^2 - (E[Y])^2$$
 $$= Var(X) + Var(Y)$$
 
 ---
-### Slide 4: Putting it All Together
-Now, let's substitute the expanded terms back into the variance equation:
+### Proof: (part 2)
+
+Let's substitute the expanded terms back into the variance equation:
 $Var(X + Y) = (E[X^2] + 2E[XY] + E[Y^2]) - ((E[X])^2 + 2E[X]E[Y] + (E[Y])^2)$
 $Var(X + Y) = E[X^2] - (E[X])^2 + E[Y^2] - (E[Y])^2 + 2E[XY] - 2E[X]E[Y]$
 We can group the terms to recognize the individual variances:
@@ -247,7 +181,8 @@ $Var(X + Y) = [E[X^2] - (E[X])^2] + [E[Y^2] - (E[Y])^2] + 2(E[XY] - E[X]E[Y])$
 $Var(X + Y) = Var(X) + Var(Y) + 2(E[XY] - E[X]E[Y])$
 
 ---
-### Slide 5: The Role of Independence
+### Proof: (part 3)
+
 This is where the **independence** of $X$ and $Y$ becomes crucial.
 For **independent random variables**, the expected value of their product is the product of their expected values:
 $E[XY] = E[X]E[Y]$
@@ -257,8 +192,10 @@ $Var(X + Y) = Var(X) + Var(Y) + 2(0)$
 $Var(X + Y) = Var(X) + Var(Y)$
 
 ---
-### Slide 6: Conclusion
-We have successfully proven that the **variance of the sum of two independent random variables** is the **sum of their variances**. This property is incredibly useful in statistics and probability theory, especially in areas like the **Central Limit Theorem** and **statistical inference**. It simplifies the calculation of the spread of a combined random process when the individual components don't influence each other. 
+
+### Conclusion
+
+We have successfully proven that the **variance of the sum of two independent random variables** is the **sum of their variances**. 
 
 ---
 

@@ -126,7 +126,3 @@ $P(\neg D|T) \propto P(T|\neg D) \cdot P(\neg D) \approx 10^-2$.
 P(D|T) $\approx 9.9 \cdot 10^{-6}/(9.9 \cdot 10^{-6} + 10^{-2}) \approx 0.99 \cdot 10^{-3}$.
 
 (The "back-of-the-envelope" solution was $10^{-3}$.)
-
-
-
-

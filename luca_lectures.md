@@ -2,19 +2,21 @@
 ## Introduction to Data Science and ML
 ## Luca de Alfaro, University of California, Santa Cruz
 
+F = Fundamental
+
 1. Introduction
     * List of topics
     * Overview of the course structure
     * Probability
     * Probability space, measure spaces, events, random variables.
 
-1. Foundations of probability
+1. Foundations of probability (F)
     * Events and compound events
     * Independent and uncorrelated events
     * Random variables
     * Independence
 
-1. Expectation and variance, conditional probability.
+1. Expectation and variance, conditional probability. (F)
     * Expectation and variance
     * Conditional probability
     * Bayes' theorem
@@ -24,7 +26,7 @@
     * Probability density functions (PDFs)
     * Cumulative distribution functions (CDFs)
 
-1. Distributions
+1. Distributions (F)
     * Uniform distribution
     * Normal distribution
     * Binomial distribution
@@ -38,7 +40,16 @@
         * Central Limit Theorem
         * Law of Large Numbers
 
-1. Hypothesis testing
+1. Information theory (F)
+    * Information
+    * Entropy
+    * Joint entropy
+    * Kulback-Leibler divergence
+    * Cross-entropy
+    * Mutual information
+    * Earth-mover's distance
+
+1. Hypothesis testing (F)
     * Null hypothesis
     * Alternative hypothesis
     * p-values
@@ -47,8 +58,9 @@
     * Statistical significance
     * Welch's t-test
     * Chi-squared test
+    * K-fold cross-validation (?)
 
-1. Data
+1. Data (sec)
     * Understanding data types
     * Pandas dataframes and their operations
     * Data types (numerical, categorical)
@@ -59,13 +71,11 @@
     * Data cleaning, dealing with outliers and missing data
     * Data visualization
 
-1. NLP data
+1. NLP data (F)
     * Text data representation
     * Tokenization
     * Regular expressions
     * N-grams
-    * Stop words removal
-    * Stemming and lemmatization
     * Bag of words model
 
 1. Text representation
@@ -77,11 +87,6 @@
         * GloVe
         * FastText
 
-1. NLP tools
-    * NLTK (Natural Language Toolkit)
-    * SpaCy
-    * Beautiful Soup
-
 1. Dimensionality Reduction
     * Principal Component Analysis (PCA)
     * Singular Value Decomposition (SVD)
@@ -90,7 +95,7 @@
     * Latent Dirichlet Allocation (LDA)
     * Non-negative Matrix Factorization (NMF)
 
-1. Unsupervised methods
+1. Unsupervised methods (F)
     * Clustering
         * K-means clustering
         * Hierarchical clustering
@@ -98,18 +103,18 @@
     * Classification
         * K-nearest neighbors (KNN)
 
-1. Sampling methods
+1. Sampling methods (?)
     * Random sampling
     * Stratified sampling
     * Systematic sampling
     * Cluster sampling
 
-1. Supervised methods 1
+1. Supervised methods 1 (F)
     * Linear Regression
     * Logistic Regression
     * Softmax and multi-class classification
 
-1. Supervised methods 2
+1. Supervised methods 2 (F)
     * Naive Bayes Classifier
         * Gaussian Naive Bayes
         * Multinomial Naive Bayes
@@ -118,7 +123,7 @@
         * Bagging
         * Boosting
 
-1. Tree-based methods
+1. Tree-based methods (F)
     * Decision Trees
         * Entropy
         * Gini impurity 
@@ -126,7 +131,7 @@
     * Random Forests
     * Gradient Boosting Machines (GBM)
 
-1. Neural Networks 1
+1. Neural Networks 1, 2 (F)
     * Feedforward Neural Networks
     * Activation Functions
         * Sigmoid
@@ -140,7 +145,7 @@
         * Stochastic Gradient Descent
         * Mini-batch Gradient Descent
 
-1. Neural Networks 2
+1. Neural Networks 3 (no)
     * Optimizers
         * Momentum
         * Adam Optimizer
@@ -151,24 +156,29 @@
         * Batch Normalization
         * Layer Normalization
 
-1. Inside PyTorch
+1. Inside PyTorch (F)
     * Representing expressions
     * Symbolic differentiation
     * Backpropagation
     * Training
+
+1. Performance monitoring (F)
+    * Measures of performance for ML
+    * Data drift
+    * Divergence, DivExplorer
+    * Fairness in Machine Learning
 
 1. Explainable AI 
     * Feature Importance
     * SHAP Values
     * LIME (Local Interpretable Model-agnostic Explanations)
     * Model Interpretability
-    * Fairness in Machine Learning
 
-1. Data mining
+1. Data Mining (?)
     * Association Rule Learning
         * Apriori Algorithm
         * FP-Growth Algorithm
-    * Divergence, DivExplorer
+
 
 
 
