@@ -1,5 +1,6 @@
 ---
 marp: true
+paginate: true
 ---
 
 ## Introduction to Probability Theory
@@ -276,6 +277,4 @@ $$ F(x) = P(X \leq x) $$
 For a continuous random variable, the CDF is related to the PDF by:
 
 $$ F(x) = \int_{-\infty}^{x} f(t) \, dt $$
-
----
 

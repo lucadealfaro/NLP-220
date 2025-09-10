@@ -1,8 +1,10 @@
 ---
 marp: true
+paginate: true
 ---
 
 ## Some Noteworthy Distributions
+### Luca de Alfaro, UC Santa Cruz
 
 ---
 
