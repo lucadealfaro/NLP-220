@@ -17,9 +17,7 @@ paginate: true
 
 ---
 
-Of course. Here are a few slides summarizing the key differences between Pearson's and Spearman's correlation.
-
-### Slide 1: What is Correlation? 📊
+### What is Correlation?
 
 * Correlation is a statistical measure that quantifies the **strength** and **direction** of a relationship between two variables.
 * The correlation coefficient is a single number between -1 and +1.

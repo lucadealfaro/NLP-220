@@ -134,13 +134,78 @@ $$ E[XY] = E[X] \cdot E[Y] $$
 
 ### Variance and Covariance
 
+<br>
+
 $$Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2$$
 
+<br>
+
 $$Cov(X, Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]$$
+
+<br>
 
 ### Standard deviation
 
 $$\sigma(X) = \sqrt{Var(X)}$$
+
+---
+
+### Computing statistics of stream data
+
+$$E[X] = \frac{1}{N} \sum_{i=1}^N X_i$$
+
+$$Var(X) = \frac{1}{N} \sum_{i=1}^N (X_i - E[X])^2 = \frac{1}{N} \sum_{i=1}^N X_i^2 - (E[X])^2$$
+
+So it suffices to remember: 
+
+* $N$
+* $\sum_{i=1}^N X_i$
+* $\sum_{i=1}^N X_i^2$
+
+---
+
+### Discounted statistics of streaming data
+
+If you have streaming data, and want to emphasize recent data, you can use **discounted statistics**.  For a discount factor $0 < \alpha < 1$, you compute:
+
+$$E_\alpha[X] = (1 - \alpha) \sum_{i=0}^{\infty} \alpha^i X_{N-i}$$
+
+$$Var_\alpha(X) = (1 - \alpha) \sum_{i=0}^{\infty} \alpha^i (X_{N-i} - E_\alpha[X])^2$$
+
+---
+
+### Incremental computation of discounted statistics
+
+<br>
+
+$$S := \alpha S + X$$
+
+$$Q := \alpha Q + X^2$$
+
+$$W := \alpha W + 1$$
+
+<br>
+
+$$E_\alpha[X] = \frac{S}{W} \qquad \qquad E_\alpha[X^2] = \frac{Q}{W} - E^2_\alpha[X]$$
+
+---
+
+### Some properties of variance
+
+<br>
+
+$$Var(aX) = a^2 Var(X)$$
+
+Proof:
+
+$$Var(aX) = E[(aX - E[aX])^2] = E[(aX - aE[X])^2] = E[a^2(X - E[X])^2] = a^2 Var(X)$$
+
+<br>
+<br>
+
+$$Var(X + a) = Var(X)$$
+
+(prove it).
 
 ---
 

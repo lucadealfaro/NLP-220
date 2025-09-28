@@ -8,6 +8,24 @@ Using a normal quarter coin, you threw T, T, T, T.  Which is true after this?
 2. It is more likely to throw an H.
 3. It is equally likely to throw an H or a T.
 
+### Variance
+
+Prove that $Var(a + X) = Var(X)$.
+
+### The bus problem
+
+#### One version
+
+You arrive at a bus stop at a random time.  Buses arrive every 10 minutes.  What is the expected time you will wait for the next bus?
+
+#### Another version
+
+You are in Dustland, a remote country where, every now and then, a bus comes.  You walk to a bus stop in the middle of nowhere.  You have no idea of the bus schedule, or even if a bus passes by every day.  But, there is another person there, looking bored.  You ask how long they have been waiting, and they tell you, oh, $x$ hours.  
+
+What is the expected time to the next bus?  Why?  
+
+Hint: The solution is simple.  If you think something complicated, you are likely following a wrong path.
+
 
 ### The Italian soccer lottery (Totocalcio). 
 
@@ -24,19 +42,6 @@ A bet on outcome $X$ pays $K(X)/K$ if outcome $X$ occurs, and 0 otherwise.
 
 1. What is the expected payout of a bet on outcome $X$?
 2. What is the optimal way to place a bet? 
-3. Should people bet on the most likely outcome? 
-4. If not, why would they do it?  Explain. 
+3. Should you bet on the most likely outcome, that is, on the $(X_1, \ldots, X_N)$, where $X_i$ is the most likely outcome for match $i$? 
+4. What strategy would you play?  Explain.  It's not so simple...
 
-### The bus problem
-
-#### One version
-
-You arrive at a bus stop at a random time.  Buses arrive every 10 minutes.  What is the expected time you will wait for the next bus?
-
-#### Another version
-
-You are in Dustland, a remote country where, every now and then, a bus comes.  You walk to a bus stop in the middle of nowhere.  You have no idea of the bus schedule, or even if a bus passes by every day.  But, there is another person there, looking bored.  You ask how long they have been waiting, and they tell you, oh, $x$ hours.  
-
-What is the expected time to the next bus?  Why?  
-
-Hint: The solution is simple.  If you think something complicated, you are likely following a wrong path.
