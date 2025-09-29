@@ -12,8 +12,6 @@ paginate: true
 * Spearman correlation
 * Kendall correlation
 * Coefficient of determination
-* Correlation vs causation
-* Independence test: Chi-squared test
 
 ---
 
@@ -41,29 +39,17 @@ paginate: true
 
 ---
 
-### Spearman's Correlation
+### Pearson's correlation
 
-* **What it Measures:** The strength and direction of a **monotonic relationship** between two variables. A monotonic relationship means the variables tend to move in the same direction, but not necessarily at a constant rate (it doesn't have to be a straight line).
-* **Key Assumptions:**
-    * The relationship is monotonic.
-    * The data is at least ordinal (can be ranked).
-* **When to Use It:**
-    * When the relationship is not linear.
-    * When you have **ordinal data** (e.g., rankings like first, second, third place).
-    * When your data contains outliers.
-* **How it Works:** It calculates the Pearson correlation coefficient on the **ranks** of the data, rather than the raw data itself. This makes it a non-parametric test and less sensitive to outliers.
+The formula for the **sample** Pearson correlation coefficient, $r$, is calculated as the covariance of the two variables divided by the product of their standard deviations.
+<br>
 
----
+$$r = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} =
+\frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}}$$
 
-### Pearson vs. Spearman: Key Differences
-
-| Aspect | Pearson's Correlation | Spearman's Correlation |
-| :--- | :--- | :--- |
-| **Relationship Type** | Linear | Monotonic |
-| **Data Type** | Continuous (Interval/Ratio) | Continuous or Ordinal (Ranked) |
-| **Assumptions** | Assumes normality and linearity | No normality assumption; less sensitive to outliers |
-| **Calculation** | Uses the raw data values | Uses the **ranks** of the data values |
-| **Ideal for** | Linear relationships, normally distributed data | Non-linear relationships, ranked data, or data with outliers |
+* $n$: Number of data pairs
+* $x_i$ and $y_i$: Individual data points
+* $\bar{x}$ and $\bar{y}$: Mean (average) of the $x$ and $y$ variables
 
 ---
 
@@ -113,6 +99,30 @@ The value of $\rho$ indicates the **strength** and **direction** of the linear r
 
 ---
 
+### Spearman's Correlation
+
+* **What it Measures:** The strength and direction of a **monotonic relationship** between two variables. A monotonic relationship means the variables tend to move in the same direction, but not necessarily at a constant rate (it doesn't have to be a straight line).
+* **When to Use It:**
+    * When the relationship is not linear.
+    * When you have **ordinal data** (e.g., rankings like first, second, third place).
+    * When your data contains outliers.
+* **How it Works:** It calculates the Pearson correlation coefficient on the **ranks** of the data, rather than the raw data itself. This makes it a non-parametric test and less sensitive to outliers.
+
+---
+
+### Pearson vs. Spearman: Key Differences
+
+| Aspect | Pearson's Correlation | Spearman's Correlation |
+| :--- | :--- | :--- |
+| **Relationship Type** | Linear | Monotonic |
+| **Data Type** | Continuous (Interval/Ratio) | Continuous or Ordinal (Ranked) |
+| **Assumptions** | Assumes normality and linearity | No normality assumption; less sensitive to outliers |
+| **Calculation** | Uses the raw data values | Uses the **ranks** of the data values |
+| **Ideal for** | Linear relationships, normally distributed data | Non-linear relationships, ranked data, or data with outliers |
+
+---
+
+
 ### Spearman's Correlation: The Core Idea
 
 Spearman's correlation is just Pearson's correlation of the ***ranks*** of the data.
@@ -136,9 +146,8 @@ $d_i = \text{rank}(x_i) - \text{rank}(y_i)$
 
 ### General Case (with tied ranks)
 
-$r_s = \frac{cov(\text{rank}_x, \text{rank}_y)}{\sigma_{\text{rank}_x} \sigma_{\text{rank}_y}}$
+$$r_s = \frac{Cov(\text{rank}_x, \text{rank}_y)}{\sigma_{\text{rank}_x} \sigma_{\text{rank}_y}}$$
 
-This is equivalent to calculating the **Pearson correlation** on the ranked data.
 
 ---
 
@@ -250,15 +259,6 @@ $$ C + D = \frac{n(n-1)}{2}$$
 * One major limitation is that $R^2$ **always increases** as you add more independent variables to the model, even if those variables are not statistically significant.
 * This can be misleading and lead to **overfitting**, where a model becomes too complex and fits the random noise in the training data rather than the underlying pattern.
 * A high $R^2$ doesn't necessarily mean the model is good or that the variables have a causal relationship.
-
----
-
-### Adjusted R-squared
-
-* To address the limitation of $R^2$, we use **Adjusted R-squared**.
-* It penalizes the model for adding useless independent variables.
-* **Adjusted $R^2$ only increases if a new variable improves the model more than would be expected by chance**. If the new variable is not helpful, Adjusted $R^2$ will decrease.
-* This makes it a more reliable metric for comparing models with different numbers of predictors.
 
 ---
 

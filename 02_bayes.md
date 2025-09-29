@@ -4,6 +4,7 @@ paginate: true
 ---
 
 ## Conditional Probability and Bayes' Theorem
+### Luca de Alfaro, UC Santa Cruz
 
 ---
 
