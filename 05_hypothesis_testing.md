@@ -211,7 +211,11 @@ This structure is not arbitrary; it mirrors the real-world t-statistic used in h
 
  ---
 
-* Substituting these into the formula for $T$ gives $T = \frac{(\bar{X} - \mu)/(\sigma/\sqrt{n})}{\sqrt{((n-1)S^2/\sigma^2)/(n-1)}} = \frac{(\bar{X} - \mu)}{S/\sqrt{n}}$, which is the familiar t-statistic.
+* Substituting these into the formula for $T$ gives 
+
+$$T = \frac{(\bar{X} - \mu)/(\sigma/\sqrt{n})}{\sqrt{((n-1)S^2/\sigma^2)/(n-1)}} = \frac{(\bar{X} - \mu)}{S/\sqrt{n}}$$
+
+which is the familiar t-statistic.
 
 ---
 

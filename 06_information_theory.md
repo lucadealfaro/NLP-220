@@ -211,7 +211,7 @@ $$H(X,Y) = -\sum_{x \in \mathcal{X}} p(x)\log p(x) -\sum_{x \in \mathcal{X}} \su
 
 The mutual information $I(X;Y)$ between two random variables quantifies their shared information. 
 
-$$I(X;Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} p(x,y) \log_2 \frac{p(x,y)}{p(x)p(y)}$$
+$$I(X;Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} p(x,y) \log \frac{p(x,y)}{p(x)p(y)}$$
 
 This can be rewritten in terms of entropy and conditional entropy:
 

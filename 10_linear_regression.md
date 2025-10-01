@@ -3,34 +3,56 @@ marp: true
 ---
 
 
-### Slide 1: Title Slide
+## Linear Regression
+### Luca de Alfaro
 
-# Simple Linear Regression
-### Predicting continuous values with one variable.
+Linear regression consists in interpolating a line through a set of data points, in such a way that the line best represents the data.
+---
+
+### Linear Regression
+
+The linear regression model is generally expressed as $Y = \beta_0 + \beta_1 X + \epsilon$, where $Y$ is the dependent variable, $X$ is the independent variable, $\beta_0$ is the $Y$-intercept, $\beta_1$ is the slope, and $\epsilon$ is the error term.
+
+The estimated linear regression coefficients, $\hat{\beta}_0$ (the intercept) and $\hat{\beta}_1$ (the slope), are calculated using the **Ordinary Least Squares (OLS)** method.
 
 ---
 
-### Slide 2: What is Simple Linear Regression?
+### 1. The Slope ($\hat{\beta}_1$)
 
-* **Simple Linear Regression** is a model with a single input feature.
-* Its goal is to find a straight line that best represents the relationship between the independent variable ($x$) and the dependent variable ($y$).
-* **Hypothesis Function:**
-    $h_\theta(x) = \theta_0 + \theta_1x$
-    * $\theta_0$ is the **y-intercept** (where the line crosses the y-axis).
-    * $\theta_1$ is the **slope** of the line.
-* The model's job is to learn the optimal values for $\theta_0$ and $\theta_1$ from the training data.
+The slope $\hat{\beta}_1$ quantifies the change in $Y$ for a one-unit change in $X$. It can be expressed in terms of the **covariance** and the **variance** or through a sum-of-squares formulation.
+
+$$\hat{\beta}_1 = \frac{\text{Cov}(X, Y)}{\text{Var}(X)} = \frac{\sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^{n} (X_i - \bar{X})^2}$$
+
+* **$\text{Cov}(X, Y)$** is the sample covariance between $X$ and $Y$.
+* **$\text{Var}(X)$** is the sample variance of $X$.
+* $X_i$ and $Y_i$ are individual data points.
+* $\bar{X}$ and $\bar{Y}$ are the sample means of $X$ and $Y$, respectively.
+* $n$ is the number of data points.
+
+***
+
+### 2. The Intercept ($\hat{\beta}_0$)
+
+The intercept $\hat{\beta}_0$ is the expected value of $Y$ when $X$ is zero. It's calculated using the estimated slope and the means of $X$ and $Y$.
+
+$$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$
+
+* $\bar{Y}$ is the mean of the dependent variable.
+* $\hat{\beta}_1$ is the estimated slope (calculated above).
+* $\bar{X}$ is the mean of the independent variable.
+
+***
+
+### The Estimated Regression Line
+
+Once $\hat{\beta}_0$ and $\hat{\beta}_1$ are calculated, the **estimated regression line** (or the line of best fit) is:
+
+$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X$$
+
+where $\hat{Y}$ is the predicted value of the dependent variable.
 
 ---
 
-### Slide 3: The Cost Function (MSE)
-
-* To determine the "best" line, we need a way to measure the error between our model's predictions and the actual data.
-* We use the **Mean Squared Error (MSE)**, which calculates the average of the squared differences between the predicted values ($h_\theta(x)$) and the actual values ($y$).
-* **Cost Function ($J$):**
-    $J(\theta_0, \theta_1) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2$
-* The coefficients that minimize this function will give us the line of best fit.
-
----
 
 ### Slide 4: Deriving the Coefficients
 

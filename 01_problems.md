@@ -1,4 +1,6 @@
-## Problems
+## Problem set 1
+
+In the solutions, don't just give the answer, explain how you got it. 
 
 ### Coins
 
@@ -8,11 +10,10 @@ Using a normal quarter coin, you threw T, T, T, T.  Which is true after this?
 2. It is more likely to throw an H.
 3. It is equally likely to throw an H or a T.
 
-### Variance
-
-Prove that $Var(a + X) = Var(X)$.
-
 ### The bus problem
+
+Warning, this is a difficult problem.
+The solution is simple, but it may be hard to find. It's ok if you don't solve it. Consider it food for thought. 
 
 #### One version
 
@@ -26,22 +27,28 @@ What is the expected time to the next bus?  Why?
 
 Hint: The solution is simple.  If you think something complicated, you are likely following a wrong path.
 
+### The Blood Test
 
-### The Italian soccer lottery (Totocalcio). 
+Suppose that there's a very rare disease, that affects only 1 person in 10,000,000 people.  That is very rare indeed! 
 
-In Italy, every weekend they play $N$ soccer matches. 
-Each match $i \in 1, \ldots, N$ can have three outcomes: 1, if the home team wins; X, if the match is a draw; 2, if the away team wins.
-We denote by $p_i(\alpha)$ the probability that outcome $\alpha \in \{1, X, 2\}$ occurs in match $i$; we assume that the probabilities are independent for different $i$. 
+To test for the disease, there is a blood test that is 99% accurate.  
 
-An outcome for the $N$ matches is a vector $X$ of length $N$, where each element is one of $\{1, X, 2\}$, meaning respectively that the home team wins, the match is a draw, or the away team wins.
+1. How many tests are needed to be 90% confident that a person has the disease? 
 
-Let $\cal F$ be the set of all possible outcomes for the $N$ matches.  The total number of possible outcomes is $3^N$.
-For an outcome $X \in \cal F$, let $K(X)$ be the number of bets on outcome $X$, and let $K = \sum_{X \in \cal F} K(X)$ be the total number of bets.
+2. If a person does 5 tests, and 4 come out positive and one negative, what is the probability that the person has the disease? 
 
-A bet on outcome $X$ pays $K(X)/K$ if outcome $X$ occurs, and 0 otherwise.
+Asssume that the tests are independent, of course.
 
-1. What is the expected payout of a bet on outcome $X$?
-2. What is the optimal way to place a bet? 
-3. Should you bet on the most likely outcome, that is, on the $(X_1, \ldots, X_N)$, where $X_i$ is the most likely outcome for match $i$? 
-4. What strategy would you play?  Explain.  It's not so simple...
+### Determining the bias of a coin
+
+You need to determine the bias of a coin.  The bias is $x$ when the coin has probability $x$ of coming up heads.
+
+As a reminder of what is done in class, if you toss the coin and get $k$ heads and $m$ tails, the posterior distribution of the bias $x$ is given by $$P(x|k,m) \propto x^k (1-x)^m$$
+and in particular, the Beta distribution Beta $(\alpha, \beta)$ with $\alpha = k+1$ and $\beta = m+1$.
+
+The variance of the Beta $(\alpha, \beta)$ distribution is 
+$$\frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$$
+
+Suppose you want to know the bias within a standard deviation of 0.1.  How many tosses do you need to do?  Find a number of tosses that guarantees that the standard deviation is at most 0.1, no matter what the actual toss outcomes are.
+
 
